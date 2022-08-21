@@ -1,8 +1,9 @@
 import pymysql
+from pymysql import cursors
 
 
 class Database(object):
-    def __init__(self, host="139.9.221.111", user="root", password='hl951103', database='Ruffian', charset='utf8',
+    def __init__(self, host, user, password, database, charset="utf-8",
                  port=3306):
         # 创建连接对象
         self.cnn = pymysql.connect(
