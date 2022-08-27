@@ -1,3 +1,10 @@
+"""
+    @Author: TheRuffian
+    @Email: bugpz2779@gmail.com
+    @CSDN: 'https://blog.csdn.net/BUGPZ'
+    @StackOverFlow: 'https://stackoverflow.com/users/12850648/theruffian'
+"""
+
 import jsonpath
 
 
