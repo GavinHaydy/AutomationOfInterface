@@ -22,3 +22,10 @@ AutomationOfInterface
 └─ requirements.txt
 
 ```
+
+```shell
+"第一次使用需要修改env.yaml中的url"
+"login.py为或去token的方法  框架加入了拦截器，自动调用此方法"
+"如果接口存在验签 可将验签方法封装到login.py中  在拦截器中调用 拦截器为send_method的Foo类 "
+"因为验签方式存在差异 后期会尽量完善拦截器"
+```
