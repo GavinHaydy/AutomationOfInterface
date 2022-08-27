@@ -1,5 +1,9 @@
-# @Author: the_ruffian
-# @email: 13558622779@163.com/bugpz2779@gmail.com
+"""
+    @Author: TheRuffian
+    @Email: bugpz2779@gmail.com
+    @CSDN: 'https://blog.csdn.net/BUGPZ'
+    @StackOverFlow: 'https://stackoverflow.com/users/12850648/theruffian'
+"""
 
 from requests import request
 from interface.login import token
@@ -38,7 +42,7 @@ class SendMethod(Foo):
         if method.lower() in default_method:
             response = request(method.lower(), url, **kwargs)
         else:
-            raise ValueError(f'请求方式"{method}"暂不支持')
+            raise ValueError(f'The request mode {method} is not supported')
         result = dict()
 
         result['req'] = response.request     # 请求体
