@@ -1,4 +1,5 @@
 # 目录结构
+[![OSCS Status](https://www.oscs1024.com/platform/badge/AutomationOfInterface.svg?size=small)](https://www.murphysec.com/accept?code=66b87a66bce3eb33eed6d0ac6683bf2f&type=1&from=2)
 ``` shell
 AutomationOfInterface
 ├─ data "测试数据包" 
