@@ -20,7 +20,7 @@ class GetKeyword:
         try:
             return jsonpath.jsonpath(source_data, f'$..{keyword}')[0]
         except TypeError:
-            return f"The keyword \033[31m{keyword}\033[0m does not exist"
+            return False
 
     @staticmethod
     def get_keywords(source_data, keyword):
