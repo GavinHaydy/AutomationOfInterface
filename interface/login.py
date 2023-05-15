@@ -1,15 +1,19 @@
 """
-    @Author: TheRuffian
+    @Author: GavinHaydy
     @Email: bugpz2779@gmail.com
     @CSDN: 'https://blog.csdn.net/BUGPZ'
-    @StackOverFlow: 'https://stackoverflow.com/users/12850648/theruffian'
 """
 
 import requests
 from common.get_keyword import GetKeyword
 from config.glo_vars import url_glo
 
+from common.document_operation import read_yaml
+
+
 def token():
-    res = requests.post( f'{url_glo()}/api/user/login',json={'phone': 'xxx', 'password': '2d3383fa392936ad7847c50a0bb4a58e'})
-    result = GetKeyword()
-    return result.get_keyword(res.json(), 'token')
+    data = ["uri", "phone", "password"]
+    login_pat = eval(f"{read_yaml('../config/env.yaml')['login']}")
+    res = requests.request(login_pat['method'].lower(), f'{url_glo()}' + login_pat['uri'],
+                           json={key: val for key, val in login_pat.items() if key in data}).json()
+    return GetKeyword.get_keyword(res, login_pat['token_name'])
