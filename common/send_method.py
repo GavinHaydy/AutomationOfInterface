@@ -1,8 +1,7 @@
 """
-    @Author: TheRuffian
+    @Author: GavinHaydy
     @Email: bugpz2779@gmail.com
     @CSDN: 'https://blog.csdn.net/BUGPZ'
-    @StackOverFlow: 'https://stackoverflow.com/users/12850648/theruffian'
 """
 
 from requests import request
@@ -11,7 +10,7 @@ from interface.login import token
 
 class Foo:
     def __getattribute__(self, item):
-        attr = object.__getattribute__(self,item)
+        attr = object.__getattribute__(self, item)
         if hasattr(attr, '__call__'):
             def new_func(*args, **kwargs):
                 print('before calling %s' % attr.__name__)
@@ -20,10 +19,10 @@ class Foo:
                     print('done calling %s' % attr.__name__)
                     return result
                 else:
-                    headers = {}
+                    headers = dict()
                     headers['Authorization'] = token()
-                    kwargs.setdefault('headers',headers)
-                    return attr(*args,**kwargs)
+                    kwargs.setdefault('headers', headers)
+                    return attr(*args, **kwargs)
 
             return new_func
         else:
@@ -45,7 +44,7 @@ class SendMethod(Foo):
             raise ValueError(f'The request mode {method} is not supported')
         result = dict()
 
-        result['req'] = response.request     # 请求体
-        result['res'] = response.json()     # 响应体
+        result['req'] = response.request  # 请求体
+        result['res'] = response.json()  # 响应体
 
         return result
