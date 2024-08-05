@@ -5,7 +5,7 @@
 """
 
 from requests import request
-from pre_interface.login import token
+from pre_operation.login import token
 
 
 class Foo:
