@@ -5,14 +5,9 @@
     @StackOverFlow: 'https://stackoverflow.com/users/12850648/theruffian'
 """
 
-import yaml
 import pandas
 import json
 import numpy
-
-
-def read_yaml(filepath):
-    return yaml.load(open(filepath, 'r').read(), yaml.FullLoader)
 
 
 class NpEncoder(json.JSONEncoder):
@@ -28,9 +23,15 @@ class NpEncoder(json.JSONEncoder):
 
 
 class OperationsOfData:
-    def __init__(self, file_name, **kwargs):
+    def __init__(self, filepath, **kwargs):
+        """
+
+        Args:
+            file_name: data file path
+            **kwargs:
+        """
         # file_type = os.path.splitext(self.file)[-1][1:]
-        self.file = file_name
+        self.file = filepath
         if self.file.endswith('csv'):
             self.data = pandas.read_csv(self.file, **kwargs)
         elif self.file.endswith('xls'):
