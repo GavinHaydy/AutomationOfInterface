@@ -45,6 +45,6 @@ class SendMethod(Foo):
         result = dict()
 
         result['req'] = response.request  # 请求体
-        result['res'] = response.json()  # 响应体
+        result['rsp'] = response.json()  # 响应体
 
         return result
