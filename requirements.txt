@@ -1,4 +1,4 @@
-TheRuffianReportPro==1.0.0
+GavinReportPro==1.0.0
 jsonpath==0.82
 pandas==2.2.2
 PyMySQL==1.1.1
