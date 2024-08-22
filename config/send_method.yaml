@@ -1,0 +1,16 @@
+whiteList: # 白名单列表
+  - '/api/smsweb/user/base/captcha'
+apiError:
+  msg_key: "msg" # 接口返回错误信息key
+  code_key: "code"
+  value:   #token异常的msg值
+    - "用户名或密码错误"
+    - "登陆已过期"
+  code:
+    - 10001 # token失效
+    - 10002 # token过期
+    - 10003 # token不存在
+
+tokenConf:
+  token_name: "Authorization" #  header中token的key
+  token_prefix: "Bearer " # token前缀 默认Bearer
